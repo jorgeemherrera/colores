@@ -1,27 +1,38 @@
-# Colores
+# Colores: aplicación de Angular con API
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.7.
+Este proyecto es creado en Angular, con consumo de una API que contiene una lista de colores en objetos.
 
-## Development server
+## Tecnolgías utilizadas:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Angular CLI
+* SCSS
+*  Flexbox
+* Heroku
 
-## Code scaffolding
+## Pasos de Instalación 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### 1. Clonar el repositorio
 
-## Build
+En una consola (CMD o Git Bash) en su ordenador ejecutar el siguiente comando:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ `git clone https://github.com/jorgeemherrera/colores.git`
 
-## Running unit tests
+#### 2. Abrir proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+En su IDE o editor de código preferido abrir el proyecto (VS Code)
 
-## Running end-to-end tests
+#### 3. Instalar dependencias
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Si está utilizando Visual Studio Code, abrir la consola de este editor con `ctrl/⌘ + ñ`
+* ejecutar el siguiente comando: `npm install` <-- el anterior comando instalará los paquetes de node (node_modules) con las dependencias necesarias para ejecutar la aplicación
 
-## Further help
+#### 4. Ejecutar la aplicación
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Ejecute el comando `ng serve -o` para que le abrá el proyecto en su navegador por defecto
+* URL local: `http://localhost:4200/`.
+
+## URL en Producción
+
+[URL keroku app]()
+
+ [Jorge Eliécer Muñoz Herrera](https://www.linkedin.com/in/jorgeemherrera/).
