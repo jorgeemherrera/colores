@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../servicios/data-api.service';
-import { ColorInterface } from '../models/color-interface';
 
 @Component({
   selector: 'app-colores',
@@ -8,18 +7,17 @@ import { ColorInterface } from '../models/color-interface';
   styleUrls: ['./colores.component.scss']
 })
 export class ColoresComponent implements OnInit {
-  Colores: any = [];
+  colors : any;
   constructor(public dataApiService: DataApiService) { }
-  private color: ColorInterface
 
   ngOnInit() {
     this.getListColors();
   }
-
   getListColors(){
     this.dataApiService
-    .getAllColors()
-    .subscribe((color: ColorInterface) => (this.color = color));
+    .getAllColors().subscribe(res =>{
+      this.colors = res['data'];
+    })
   }
 
 
