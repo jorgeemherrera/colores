@@ -6,7 +6,13 @@ import { DataApiService } from '../servicios/data-api.service';
   styleUrls: ['./colores.component.scss']
 })
 export class ColoresComponent implements OnInit {
+
   colors : any;
+  msg = "";
+
+  //animations
+  status: boolean = false;
+
   constructor(public dataApiService: DataApiService) { }
 
   ngOnInit() {
@@ -22,16 +28,22 @@ export class ColoresComponent implements OnInit {
   /**
    * Copy clipboard
    */
-  public logError(error: Error):void {
-    console.group('copy clipboard error');
-    console.error(error);
-    console.groupEnd();
+  copyColor(val: string){
+    let selectionBox = document.createElement('textarea');
+    selectionBox.style.opacity = '0';
+    selectionBox.style.position = 'fixed';
+    selectionBox.style.top = '0';
+    selectionBox.style.left = '0';
+    selectionBox.value = val;
+    document.body.appendChild(selectionBox);
+    selectionBox.focus();
+    selectionBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selectionBox);
+    this.msg = "Copy!";
   }
-  
-  public logSuccess( value: string ) : void {
-    console.group( "copy clipboard Success" );
-    console.log( value );
-    console.groupEnd();
+  clickEvent(){
+    this.status = !this.status;
   }
 
 }

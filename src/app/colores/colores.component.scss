@@ -1,5 +1,6 @@
 @import '../../assets/scss/colors';
-$lato: 'Lato', sans-serif;
+$lato: 'Lato',
+sans-serif;
 header {
     background-color: $orange;
     display: flex;
@@ -10,39 +11,41 @@ header {
     color: $white;
     font-size: 1.5rem;
 }
+
 footer {
     display: flex;
     justify-content: space-between;
-    background-color: $black; 
+    background-color: $black;
     color: $yellow;
     margin-top: 0.7rem;
-   > a {
-       color: $yellow;
-       font-family: $lato;
-       margin: 0.7rem;
-       i {
-        display: inline-block;
-        padding: 3px;
-        border: solid $yellow;
-        border-width: 0 3px 3px 0;
-        &.icon-left {
-            transform: rotate(135deg);
-            -webkit-transform: rotate(135deg);
-            -moz-transform: rotate(135deg);
-            -ms-transform:  rotate(135deg);
-            -o-transform: rotate(135deg);
-          }
-        &.icon-right {
-            transform: rotate(-45deg);
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            -ms-transform:  rotate(-45deg);
-            -o-transform: rotate(-45deg);
-          }
-      }
-   }
+    >a {
+        color: $yellow;
+        font-family: $lato;
+        margin: 0.7rem;
+        i {
+            display: inline-block;
+            padding: 3px;
+            border: solid $yellow;
+            border-width: 0 3px 3px 0;
+            &.icon-left {
+                transform: rotate(135deg);
+                -webkit-transform: rotate(135deg);
+                -moz-transform: rotate(135deg);
+                -ms-transform: rotate(135deg);
+                -o-transform: rotate(135deg);
+            }
+            &.icon-right {
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+            }
+        }
+    }
 }
-.container-flex{
+
+.container-flex {
     display: flex;
     display: -webkit-box;
     display: -moz-box;
@@ -57,13 +60,13 @@ footer {
         width: 445px;
         height: auto;
         border-radius: .4rem;
-        background-color: #73099c;
+        background-color: #a7a7a7;
         padding: .6rem;
         margin-top: .7rem;
-        
-        >.color-item__container{
+        >.color-item__container {
             padding: 1.1rem 0rem;
-            >.color-item__hex, >.color-item__name{
+            >.color-item__hex,
+            >.color-item__name {
                 display: flex;
                 justify-content: center;
                 font-size: 1.4rem;
@@ -73,13 +76,29 @@ footer {
         >.color-item__hex {
             font-weight: 600;
         }
-        >.color-item__year, >.color-item__pantone {
+        >.color-item__year,
+        >.color-item__pantone {
             font-size: 1rem;
         }
-        >.color-item__pantone{
+        >.color-item__pantone {
             display: flex;
             justify-content: flex-end;
         }
     }
 }
-    
+
+button {
+    border: none;
+    background: none;
+    outline: none;
+    color: $white;
+    display: flex;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: -.5rem;
+}
+
+.color-item__hex .zoom {
+    width: 100vw !important;
+    height: 100vh !important;
+}

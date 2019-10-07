@@ -1,108 +1,19 @@
-
 <div class="container-fluid">
-  <header>Colores</header>
-  <div class="container-flex">
-    <div class="color-item" *ngFor="let color of colors">
-      <span class="color-item__year">
+    <header>Colores</header>
+    <div class="container-flex">
+
+        <div class="color-item" *ngFor="let color of colors">
+            <span class="color-item__year">
       {{color.year}}
       </span>
-      <div class="color-item__container">
-        <div class="color-item__name">{{color.name}}</div>
-        <!-- <button [clipboard]="hexaColor.innerHTML.trim()" (clipboardCopy)="logSuccess( $event )" (clipboardError)="logError( $event )">copy!</button> -->
-        <div class="color-item__hex" ><span #hexaColor>{{color.color}}</span></div>
-      </div>
-      <span class="color-item__pantone">{{color.pantone_value}}</span>
+            <div class="color-item__container" (click)="clickEvent()">
+                <div class="color-item__name">{{color.name}}</div>
+                <div class="color-item__hex" [ngClass]="status ? 'zoom' : '' "><button (click)="copyColor(color.color)" data-toggle="tooltip" data-placement="top" title="{{msg}}">{{color.color}}</button>
+                </div>
+            </div>
+            <span class="color-item__pantone">{{color.pantone_value}}</span>
+        </div>
+
     </div>
-    <!-- <div class="color-item">
-      <span class="color-item__year">
-          2006
-      </span>
-      <div class="color-item__container">
-              <div class="color-item__name">cerulean</div>
-              <div class="color-item__hex">#98B2D1</div>
-      </div>
-      <span class="color-item__pantone">15-4020</span>
-      </div>
-      <div class="color-item">
-          <span class="color-item__year">
-              2006
-          </span>
-          <div class="color-item__container">
-                  <div class="color-item__name">cerulean</div>
-                  <div class="color-item__hex">#98B2D1</div>
-          </div>
-          <span class="color-item__pantone">15-4020</span>
-      </div>
-      <div class="color-item">
-          <span class="color-item__year">
-              2006
-          </span>
-          <div class="color-item__container">
-                  <div class="color-item__name">cerulean</div>
-                  <div class="color-item__hex">#98B2D1</div>
-          </div>
-          <span class="color-item__pantone">15-4020</span>
-      </div>
-      <div class="color-item">
-          <span class="color-item__year">
-              2006
-          </span>
-          <div class="color-item__container">
-                  <div class="color-item__name">cerulean</div>
-                  <div class="color-item__hex">#98B2D1</div>
-          </div>
-          <span class="color-item__pantone">15-4020</span>
-      </div>
-      <div class="color-item">
-              <span class="color-item__year">
-                  2006
-              </span>
-              <div class="color-item__container">
-                      <div class="color-item__name">cerulean</div>
-                      <div class="color-item__hex">#98B2D1</div>
-              </div>
-              <span class="color-item__pantone">15-4020</span>
-      </div>
-      <div class="color-item">
-              <span class="color-item__year">
-                  2006
-              </span>
-              <div class="color-item__container">
-                      <div class="color-item__name">cerulean</div>
-                      <div class="color-item__hex">#98B2D1</div>
-              </div>
-              <span class="color-item__pantone">15-4020</span>
-      </div> 
-      <div class="color-item">
-              <span class="color-item__year">
-                  2006
-              </span>
-              <div class="color-item__container">
-                      <div class="color-item__name">cerulean</div>
-                      <div class="color-item__hex">#98B2D1</div>
-              </div>
-              <span class="color-item__pantone">15-4020</span>
-      </div> 
-      <div class="color-item">
-              <span class="color-item__year">
-                  2006
-              </span>
-              <div class="color-item__container">
-                      <div class="color-item__name">cerulean</div>
-                      <div class="color-item__hex">#98B2D1</div>
-              </div>
-              <span class="color-item__pantone">15-4020</span>
-      </div> 
-      <div class="color-item">
-              <span class="color-item__year">
-                  2006
-              </span>
-              <div class="color-item__container">
-                      <div class="color-item__name">cerulean</div>
-                      <div class="color-item__hex">#98B2D1</div>
-              </div>
-              <span class="color-item__pantone">15-4020</span>
-      </div>  -->
-  </div>
-  <footer><a href="" class="paginator-left"><i class="icon-left"></i> Anterior</a>   <a href="" class="paginator-right">Siguiente <i class="icon-right"></i></a></footer>
+    <footer><a href="" class="paginator-left"><i class="icon-left"></i> Anterior</a> <a href="" class="paginator-right">Siguiente <i class="icon-right"></i></a></footer>
 </div>
