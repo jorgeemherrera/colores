@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataApiService } from '../servicios/data-api.service';
 
 @Component({
   selector: 'app-colores',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./colores.component.scss']
 })
 export class ColoresComponent implements OnInit {
-
-  constructor() { }
+  colors : any;
+  constructor(public dataApiService: DataApiService) { }
 
   ngOnInit() {
+    this.getListColors();
   }
+  getListColors(){
+    this.dataApiService
+    .getAllColors().subscribe(res =>{
+      this.colors = res['data'];
+    })
+  }
+
 
 }

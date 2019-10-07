@@ -25,14 +25,14 @@ footer {
         padding: 3px;
         border: solid $yellow;
         border-width: 0 3px 3px 0;
-        .icon-left {
+        &.icon-left {
             transform: rotate(135deg);
             -webkit-transform: rotate(135deg);
             -moz-transform: rotate(135deg);
             -ms-transform:  rotate(135deg);
             -o-transform: rotate(135deg);
           }
-          .icon-right {
+        &.icon-right {
             transform: rotate(-45deg);
             -webkit-transform: rotate(-45deg);
             -moz-transform: rotate(-45deg);
