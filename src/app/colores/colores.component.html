@@ -8,7 +8,8 @@
       </span>
       <div class="color-item__container">
         <div class="color-item__name">{{color.name}}</div>
-        <div class="color-item__hex">{{color.color}}</div>
+        <!-- <button [clipboard]="hexaColor.innerHTML.trim()" (clipboardCopy)="logSuccess( $event )" (clipboardError)="logError( $event )">copy!</button> -->
+        <div class="color-item__hex" ><span #hexaColor>{{color.color}}</span></div>
       </div>
       <span class="color-item__pantone">{{color.pantone_value}}</span>
     </div>
