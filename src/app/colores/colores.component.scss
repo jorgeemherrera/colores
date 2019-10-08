@@ -96,6 +96,10 @@ button {
     text-align: center;
     font-size: 1.4rem;
     margin-bottom: -.5rem;
+    transition: .2s ease-in-out;
+    &:hover{
+        color: $orange;
+    }
 }
 
 .color-item__hex .zoom {
