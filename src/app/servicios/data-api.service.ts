@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable, throwError  } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataApiService {
-
   constructor( private http: HttpClient) { }
 
   httpOptions = {
@@ -19,5 +19,4 @@ export class DataApiService {
     const api_url = "https://reqres.in/api/colors/";
     return this.http.get(api_url);
   }
-
 }
