@@ -10,6 +10,7 @@ export class ColoresComponent implements OnInit {
   colors : any;
   msg = "";
   page: any;
+  title = "Colores";
   //animations
   status: boolean = false;
 
