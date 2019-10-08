@@ -9,7 +9,7 @@ export class ColoresComponent implements OnInit {
 
   colors : any;
   msg = "";
-
+  page: any;
   //animations
   status: boolean = false;
 
@@ -18,12 +18,18 @@ export class ColoresComponent implements OnInit {
   ngOnInit() {
     this.getListColors();
   }
+
   getListColors(){
     this.dataApiService
     .getAllColors().subscribe(res =>{
       this.colors = res['data'];
+      this.page = res['page'];
+      console.log('pages:', this.page);
     })
   }
+
+
+  
 
   /**
    * Copy clipboard
