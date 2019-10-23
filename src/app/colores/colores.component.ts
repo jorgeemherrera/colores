@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { DataApiService } from '../servicios/data-api.service';
+import { Observable, of } from 'rxjs';
+import { delay, map, tap } from 'rxjs/operators';
 @Component({
   selector: 'app-colores',
   templateUrl: './colores.component.html',
-  styleUrls: ['./colores.component.scss']
+  styleUrls: ['./colores.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ColoresComponent implements OnInit {
+  asyncColors: Observable<string[]>;
+
   colors: any;
   msg = "";
   page: any;
@@ -13,57 +18,38 @@ export class ColoresComponent implements OnInit {
   total: any;
   title = "Colores";
   config: any;
-  //animations
-  status: boolean = false;
-
+  loading: boolean;
+  status: boolean;
   constructor(public dataApiService: DataApiService) {
-    this.config = {
-      itemsPerPage: this.perPage,
-      currentPage: this.page,
-      totalItems: this.total
-    };
   }
 
   ngOnInit() {
-    this.getListColors();
+    this.getListColors(1);
   }
 
-  clickBefore() {
-    this.getListColors();
-  }
-  clickAfter() {
-    this.getListColors2();
-  }
-
-  getListColors() {
+  getListColors(page: number) {
+    this.loading = true;
     this.dataApiService
       .getAllColors().subscribe(res => {
         this.colors = res['data'];
-        // this.perPage = res['per_page'];
-        // this.page = res['page'];
-        // this.total = res['total']
-        // console.log('pages:', this.page);
-        // console.log('per page:', this.perPage);
-        // console.log('total', this.total);
       })
   }
 
-  getListColors2() {
-    this.dataApiService
-      .getPage().subscribe(res => {
-        this.colors = res['data'];
-        // this.perPage = res['per_page'];
-        // this.page = res['page'];
-        // this.total = res['total']
-        // console.log('pages:', this.page);
-        // console.log('per page:', this.perPage);
-        // console.log('total', this.total);
-      })
-  }
 
-  pageChanged(event) {
-    this.config.currentPage = event;
-  }
+
+  // getListColors() {
+  //   this.dataApiService
+  //     .getAllColors().subscribe(res => {
+  //       this.colors = res['data'];
+  //       this.perPage = res['per_page'];
+  //       this.page = res['page'];
+  //       this.total = res['total']
+  //       console.log('pages:', this.page);
+  //       console.log('per page:', this.perPage);
+  //       console.log('total', this.total);
+  //     })
+  // }
+
 
   /**
    * Copy clipboard

@@ -2,7 +2,7 @@
     <header>{{title}}</header>
     <div class="container-flex">
 
-        <div class="color-item" *ngFor="let color of colors | paginate: config ">
+        <div class="color-item" *ngFor="let color of colors | paginate: { itemsPerPage: perPage, currentPage: page, totalItems: total } ">
 {{color.per_page}}
             <span class="color-item__year">
       {{color.year}}
@@ -16,7 +16,8 @@
         </div>
 
     </div>
-        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
+        <pagination-controls (pageChange)="getListColors($event)"></pagination-controls>
 
     <footer><a href="" class="paginator-left" (click)="clickBefore()"><i class="icon-left"></i> Anterior</a> <a href="" class="paginator-right" (click)="clickAfter()">Siguiente <i class="icon-right"></i></a></footer>
 </div>

@@ -16,11 +16,7 @@ export class DataApiService {
   }
 
   getAllColors() {
-    const api_url = "https://reqres.in/api/colors/";
-    return this.http.get(api_url);
-  }
-  getPage() {
-    const api_url = "https://reqres.in/api/colors/?page=2";
+    const api_url = "https://reqres.in/api/colors";
     return this.http.get(api_url);
   }
 }
