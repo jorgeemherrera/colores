@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ColoresComponent } from './colores/colores.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPaginationModule } from 'ngx-pagination';
 /**
  * Servicio
  */
@@ -19,7 +20,8 @@ import { DataApiService } from './servicios/data-api.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [DataApiService],
   bootstrap: [AppComponent]
