@@ -2,7 +2,7 @@
 
 Este proyecto es creado en Angular, con consumo de una API que contiene una lista de colores en objetos.
 
-## Tecnolgías utilizadas:
+## Tecnologías utilizadas:
 
 * Angular CLI
 * SCSS
